@@ -16,6 +16,7 @@ public class JsonGeneratorApplication {
         DataProviderService dataProviderService = new DataProviderService();
 
         writeToJsonFile(dataProviderService.getFlatStructedClass(), "FlatStructured.json");
+        writeToJsonFile(dataProviderService.getRootObjectWithLists(), "ListsInsideRootObject.json");
     }
 
     private static void writeToJsonFile(Object data, String fileName) throws IOException {

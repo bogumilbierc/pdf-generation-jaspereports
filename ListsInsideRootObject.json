@@ -1,0 +1,30 @@
+{
+  "name": "John",
+  "surname": "Doe",
+  "amount": 16.89,
+  "numberOfDays": 15,
+  "nestedElements": [
+    {
+      "name": "Nested Element 1",
+      "price": 10.4,
+      "quantity": 10
+    },
+    {
+      "name": "Nested Element 2",
+      "price": 7.4,
+      "quantity": 99
+    }
+  ],
+  "anotherNestedElements": [
+    {
+      "caption": "First Caption",
+      "currency": "GBP",
+      "amount": 100
+    },
+    {
+      "caption": "Second Caption",
+      "currency": "USD",
+      "amount": 7
+    }
+  ]
+}
