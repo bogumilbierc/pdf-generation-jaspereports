@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+
+    <fontFamily name="Outwrite">
+        <normal><![CDATA[fonts/Outwrite.ttf]]></normal>
+        <bold><![CDATA[fonts/Outwrite.ttf]]></bold>
+        <italic><![CDATA[fonts/Outwrite.ttf]]></italic>
+        <boldItalic><![CDATA[fonts/Outwrite.ttf]]></boldItalic>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+    </fontFamily>
+
+</fontFamilies>

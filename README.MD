@@ -71,7 +71,12 @@ In order to print values from list, You need to use component that supports such
 TODO
 
 ## Custom font embedded in PDF
-TODO
+This will allow You to use custom font and embed it in PDF, so users won't need to have this font installed on their machine to see the document properly.
+
+Steps:
+1. Get ```.ttf``` files for the font, You will need separate files for bold, italic, regular.
+2. Create XML file, that defines the font. ```Outwrite.xml``` is an example of such file
+3. Create ```jasperreports_extension.properties``` file in resources folder. This file needs to contain reference to font XML descriptor created in the step above.
 
 
 

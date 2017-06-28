@@ -32,6 +32,12 @@ public class TutorialGenerationService {
         saveToFile(pdfBytes, "ListsInsideRootObject.pdf");
     }
 
+    public void generatePdfWithCustomFont() {
+        FlatStructuredClass flatStructuredClass = dataProviderService.getFlatStructedClass();
+        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/CustomFontTemplate.jrxml", flatStructuredClass);
+        saveToFile(pdfBytes, "CustomFont.pdf");
+    }
+
     private void saveToFile(byte[] bytes, String fileName) {
         try {
             File file = new File(fileName);

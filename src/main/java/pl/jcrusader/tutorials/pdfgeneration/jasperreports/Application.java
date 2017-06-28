@@ -11,6 +11,7 @@ public class Application {
         TutorialGenerationService tutorialGenerationService = new TutorialGenerationService();
         tutorialGenerationService.generatePdfWithFlatStructuredData();
         tutorialGenerationService.generatePdfWithListsInsideRootObject();
+        tutorialGenerationService.generatePdfWithCustomFont();
 
     }
 
