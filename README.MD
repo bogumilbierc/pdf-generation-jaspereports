@@ -44,6 +44,29 @@ Steps:
 - use values from root object (for example in TextField) from data source field with ```$F{FIELD_NAME}```
 - use values from nested object by defining ```datasetRun``` withing ```jr:list```
 
+### Printing values from list
+In order to print values from list, You need to use component that supports such behaviour, for example ```jr:list```
+```xml
+<!-- This needs to be nested inside componentElement -->
+<componentElement>
+                <!-- Use reportElement to position it within document -->
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="110" width="554" height="25" isRemoveLineWhenBlank="true" uuid="5914e6ae-75ab-408b-8481-37cc8b9aca77">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<!-- Define list component -->
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
+				    <!-- Define dataset run using name of the dataset defined at top of the report -->
+					<datasetRun subDataset="nestedElementsDataSet" uuid="2002271b-6392-4900-9f37-b779ff0f6226">
+					    <!-- Use dataSourceExpression to generate new JsonDataSource from field in original JsonDataSource passed from Java -->
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("nestedElements")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="25" width="554">
+						<!-- Content with expressions that will evaluate using regular syntax, like ${FIELD_NAME} -->
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+```
+
 ## Lists inside lists
 TODO
 
