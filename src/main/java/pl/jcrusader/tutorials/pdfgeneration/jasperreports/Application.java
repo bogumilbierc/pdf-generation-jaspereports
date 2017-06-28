@@ -10,6 +10,7 @@ public class Application {
     public static void main(String args[]) {
         TutorialGenerationService tutorialGenerationService = new TutorialGenerationService();
         tutorialGenerationService.generatePdfWithFlatStructuredData();
+        tutorialGenerationService.generatePdfWithListsInsideRootObject();
 
     }
 

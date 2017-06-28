@@ -1,6 +1,7 @@
 package pl.jcrusader.tutorials.pdfgeneration.jasperreports.service;
 
 import pl.jcrusader.tutorials.pdfgeneration.jasperreports.generator.JasperGenerator;
+import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.listinroot.RootObject;
 import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.simple.FlatStructuredClass;
 
 import java.io.File;
@@ -23,6 +24,12 @@ public class TutorialGenerationService {
         FlatStructuredClass flatStructuredClass = dataProviderService.getFlatStructedClass();
         byte[] pdfBytes = jasperGenerator.generatePdf("/templates/FlatStructuredTemplate.jrxml", flatStructuredClass);
         saveToFile(pdfBytes, "FlatStructured.pdf");
+    }
+
+    public void generatePdfWithListsInsideRootObject() {
+        RootObject rootObject = dataProviderService.getRootObjectWithLists();
+        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ListsInsideRootObjects.jrxml", rootObject);
+        saveToFile(pdfBytes, "ListsInsideRootObject.pdf");
     }
 
     private void saveToFile(byte[] bytes, String fileName) {
