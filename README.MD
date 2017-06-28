@@ -24,18 +24,17 @@ In this case we will use:
 - template with only one page
 - data from class that does not have any nested objects (apart from standard Java types)
 
-### Files
-- FlatStructuredClass.java
-- FlatStructuredTemplate.jrxml
-- Application.java
-- TutorialGenerationService.java
+## Nested objects
+TODO
 
-### DIY
-1. Open JasperSoft Studio
-2. Click ```File->New->JasperReport```
-3. Choose ```Blank A4``` and click ```Next```
-4. Give the file name of ```FlatStructuredTemplate.jrxml``` and click ```next```
+## Lists inside root object
+TODO
 
+## Lists inside lists
+TODO
+
+## Custom font embedded in PDF
+TODO
 
 
 
