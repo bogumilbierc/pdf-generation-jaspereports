@@ -28,7 +28,7 @@ public class TutorialGenerationService {
 
     public void generatePdfWithListsInsideRootObject() {
         RootObject rootObject = dataProviderService.getRootObjectWithLists();
-        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ListsInsideRootObjects.jrxml", rootObject);
+        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ListsInsideRootObjectsTemplate.jrxml", rootObject);
         saveToFile(pdfBytes, "ListsInsideRootObject.pdf");
     }
 
