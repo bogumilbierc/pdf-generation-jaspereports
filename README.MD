@@ -1,7 +1,7 @@
-#PDF Generation using JasperReports
+# PDF Generation using JasperReports
  This is a simple tutorial that is meant to show You, how easy PDF generation can be if U decide to use Jasper Reports.
 
-#Prerequisites
+# Prerequisites
 ## Compiling and running sample application
 1. Java 1.8
 2. Maven 3.3.x
@@ -14,9 +14,9 @@ or
 
 - favourite Text Editor (not recommended for beginners - JasperSoft Studio provides awesome WYSIWYG editor)
 
-#Code walk trough
+# Code walk trough
 
-#Templates
+# Templates
 This tutorial contains couple examples, starting from really easy ones up to more complicated.
 
 ## Flat structured
@@ -70,6 +70,17 @@ In order to print values from list, You need to use component that supports such
 ## Lists inside lists
 TODO
 
+## Embedding images in the template
+- base64
+- apache commons IO
+TODO
+
+## Creating reusable elements
+TODO
+
+## Solving dependency issues with iText
+TODO
+
 ## Custom font embedded in PDF
 This will allow You to use custom font and embed it in PDF, so users won't need to have this font installed on their machine to see the document properly.
 
@@ -80,5 +91,5 @@ Steps:
 
 
 
-#Why there are no tests?
+# Why there are no tests?
 You may ask - why not TDD, why there are no tests... The answer is simple - it is really hard to test if generated PDF looks OK - it must be veryfied by hooman/monkey/vegan.
