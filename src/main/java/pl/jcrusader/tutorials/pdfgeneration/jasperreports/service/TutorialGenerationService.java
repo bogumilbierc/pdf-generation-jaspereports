@@ -7,6 +7,7 @@ import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.simple.FlatStruc
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Arrays;
 
 /**
  * Created by bogumil on 6/28/17.
@@ -39,9 +40,14 @@ public class TutorialGenerationService {
         saveToFile(pdfBytes, "CustomFont.pdf");
     }
 
-    public void generatePdfWithReportWithSubreport(){
+    public void generatePdfWithReportWithSubreport() {
         RootObjectForReportWithSubreport rootObjectForReportWithSubreport = dataProviderService.getRootObjectForReportWithSubreport();
-        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ReportWithSubreportTemplate.jrxml", rootObjectForReportWithSubreport);
+        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ReportWithSubreportTemplate.jrxml", rootObjectForReportWithSubreport, Arrays.asList(
+                JasperGenerator.Subreport.builder()
+                        .resourceName("/templates/SubreportForSectionTemplate.jrxml")
+                        .parameterName("sectionSubreportTemplate")
+                        .build()
+        ));
         saveToFile(pdfBytes, "ReportWithSubreport.pdf");
     }
 

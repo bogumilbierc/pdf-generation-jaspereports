@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
 <!-- 2017-07-02T12:32:39 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FlatStructuredTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e07b2c30-643c-49e8-b259-ce571da6fd60">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
-	<queryString language="json">
-		<![CDATA[]]>
-	</queryString>
-	<field name="name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="surname" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="amount" class="java.math.BigDecimal">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="numberOfDays" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="320" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="15" width="479" height="55" uuid="69abd09f-ebb1-4773-afe4-a029ac7980f0"/>
-				<textFieldExpression><![CDATA["Dear customer \n" + "Name: "+  $F{name} + ",\nSurname " + $F{surname}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="80" width="479" height="30" uuid="187f9f61-cc18-48a5-a918-1eef48bb6af7"/>
-				<textFieldExpression><![CDATA["You are due with Your payment of " + $F{amount} + " by " + $F{numberOfDays} + " days."]]></textFieldExpression>
-			</textField>
-			<subreport>
-				<reportElement stretchType="RelativeToTallestObject" x="0" y="120" width="555" height="200" uuid="e3583dfc-fab5-4d2c-857e-7338646446ac"/>
-				<subreportParameter name="dataSourceFieldName">
-					<subreportParameterExpression><![CDATA["bigDebts"]]></subreportParameterExpression>
-				</subreportParameter>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["SubreportForSectionTemplate.jasper"]]></subreportExpression>
-			</subreport>
-		</band>
-	</detail>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="FlatStructuredTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="e07b2c30-643c-49e8-b259-ce571da6fd60">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
+    <parameter name="sectionSubreportTemplate" class="net.sf.jasperreports.engine.JasperReport"/>
+    <queryString language="json">
+        <![CDATA[]]>
+    </queryString>
+    <field name="name" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="surname" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="amount" class="java.math.BigDecimal">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="numberOfDays" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="320" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="15" width="479" height="55" uuid="69abd09f-ebb1-4773-afe4-a029ac7980f0"/>
+                <textFieldExpression>
+                    <![CDATA["Dear customer \n" + "Name: "+  $F{name} + ",\nSurname " + $F{surname}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="80" width="479" height="30" uuid="187f9f61-cc18-48a5-a918-1eef48bb6af7"/>
+                <textFieldExpression>
+                    <![CDATA["You are due with Your payment of " + $F{amount} + " by " + $F{numberOfDays} + " days."]]></textFieldExpression>
+            </textField>
+            <subreport>
+                <reportElement stretchType="RelativeToTallestObject" x="0" y="120" width="555" height="200"
+                               uuid="e3583dfc-fab5-4d2c-857e-7338646446ac"/>
+                <subreportParameter name="dataSourceFieldName">
+                    <subreportParameterExpression><![CDATA["bigDebts"]]></subreportParameterExpression>
+                </subreportParameter>
+                <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+                <subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{sectionSubreportTemplate}]]></subreportExpression>
+            </subreport>
+        </band>
+    </detail>
 </jasperReport>
