@@ -2,6 +2,7 @@ package pl.jcrusader.tutorials.pdfgeneration.jasperreports.service;
 
 import pl.jcrusader.tutorials.pdfgeneration.jasperreports.generator.JasperGenerator;
 import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.listinroot.RootObject;
+import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.listinroot.RootObjectForReportWithSubreport;
 import pl.jcrusader.tutorials.pdfgeneration.jasperreports.model.simple.FlatStructuredClass;
 
 import java.io.File;
@@ -36,6 +37,12 @@ public class TutorialGenerationService {
         FlatStructuredClass flatStructuredClass = dataProviderService.getFlatStructedClass();
         byte[] pdfBytes = jasperGenerator.generatePdf("/templates/CustomFontTemplate.jrxml", flatStructuredClass);
         saveToFile(pdfBytes, "CustomFont.pdf");
+    }
+
+    public void generatePdfWithReportWithSubreport(){
+        RootObjectForReportWithSubreport rootObjectForReportWithSubreport = dataProviderService.getRootObjectForReportWithSubreport();
+        byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ReportWithSubreportTemplate.jrxml", rootObjectForReportWithSubreport);
+        saveToFile(pdfBytes, "ReportWithSubreport.pdf");
     }
 
     private void saveToFile(byte[] bytes, String fileName) {

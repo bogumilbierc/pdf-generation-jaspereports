@@ -1,0 +1,1 @@
+{"name":"John","surname":"Doe","amount":16.89,"numberOfDays":15,"smallDebts":null,"bigDebts":[{"name":"SmallDebt 1","price":10,"quantity":1},{"name":"SmallDebt 2","price":8,"quantity":1}]}

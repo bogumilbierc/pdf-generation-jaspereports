@@ -12,6 +12,7 @@ public class Application {
         tutorialGenerationService.generatePdfWithFlatStructuredData();
         tutorialGenerationService.generatePdfWithListsInsideRootObject();
         tutorialGenerationService.generatePdfWithCustomFont();
+        tutorialGenerationService.generatePdfWithReportWithSubreport();
 
     }
 
