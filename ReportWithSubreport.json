@@ -1,1 +1,30 @@
-{"name":"John","surname":"Doe","amount":16.89,"numberOfDays":15,"smallDebts":null,"bigDebts":[{"name":"SmallDebt 1","price":10,"quantity":1},{"name":"SmallDebt 2","price":8,"quantity":1}]}
+{
+  "name": "John",
+  "surname": "Doe",
+  "amount": 16.89,
+  "numberOfDays": 15,
+  "smallDebts": [
+    {
+      "name": "SmallDebt 1",
+      "price": 10,
+      "quantity": 1
+    },
+    {
+      "name": "SmallDebt 2",
+      "price": 8,
+      "quantity": 1
+    }
+  ],
+  "bigDebts": [
+    {
+      "name": "BigDebt 1",
+      "price": 500,
+      "quantity": 1
+    },
+    {
+      "name": "BigDebt 2",
+      "price": 800,
+      "quantity": 1
+    }
+  ]
+}

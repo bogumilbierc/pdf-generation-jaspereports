@@ -80,7 +80,7 @@ public class DataProviderService {
                                         .build()
                         )
                 )
-                .bigDebts(
+                .smallDebts(
                         Arrays.asList(
                                 NestedElement.builder()
                                         .name("SmallDebt 1")
