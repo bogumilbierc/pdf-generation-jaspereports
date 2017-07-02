@@ -23,15 +23,15 @@
 		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="436" splitType="Stretch">
+		<band height="225" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="479" height="25" uuid="69abd09f-ebb1-4773-afe4-a029ac7980f0"/>
-				<textFieldExpression><![CDATA["Name: "+  $F{name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["SubReport - from parameter"]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="31" y="77" width="200" height="200" uuid="2717d648-3aec-4f89-b3ef-b1eba59277f0"/>
+				<reportElement x="31" y="77" width="200" height="100" uuid="2717d648-3aec-4f89-b3ef-b1eba59277f0"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
-				<subreportExpression><![CDATA["/home/bogumil/IdeaProjects/pdf-generation-jasperreports/src/main/resources/templates/SubreportForSectionTemplate.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SectionSubReportTemplate}]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
