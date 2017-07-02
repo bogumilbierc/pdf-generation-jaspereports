@@ -30,6 +30,10 @@
 			</textField>
 			<subreport>
 				<reportElement x="31" y="77" width="200" height="100" uuid="2717d648-3aec-4f89-b3ef-b1eba59277f0"/>
+				<subreportParameter name="dataSourceFieldName">
+					<subreportParameterExpression><![CDATA["bigDebts"]]></subreportParameterExpression>
+				</subreportParameter>
+				<!--<dataSourceExpression><![CDATA[$P{REPORT_CONNECTION}]]></dataSourceExpression>-->
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SectionSubReportTemplate}]]></subreportExpression>
 			</subreport>
