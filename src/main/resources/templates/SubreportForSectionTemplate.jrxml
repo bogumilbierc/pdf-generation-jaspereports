@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-07-02T12:33:59 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubreportForSectionTemplate" pageWidth="555" pageHeight="100" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4901564e-1f77-4319-8021-776e6b24185e">
+<!-- 2017-07-02T18:15:12 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubreportForSectionTemplate" pageWidth="555" pageHeight="30" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4901564e-1f77-4319-8021-776e6b24185e">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
-	<subDataset name="sectionDataSet" uuid="aa0835e7-06ec-4a1f-b65a-9fd9fc264df0">
-		<queryString>
-			<![CDATA[]]>
-		</queryString>
-		<field name="quantity" class="java.lang.Integer"/>
-		<field name="name" class="java.lang.String"/>
-		<field name="price" class="java.math.BigDecimal"/>
-	</subDataset>
-	<parameter name="dataSourceFieldName" class="java.lang.String"/>
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
@@ -19,32 +10,11 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="100" splitType="Stretch">
-			<componentElement>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="38" width="554" height="25" isRemoveLineWhenBlank="true" uuid="5914e6ae-75ab-408b-8481-37cc8b9aca77">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-				</reportElement>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
-					<datasetRun subDataset="sectionDataSet" uuid="2002271b-6392-4900-9f37-b779ff0f6226">
-						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource($P{dataSourceFieldName})]]></dataSourceExpression>
-					</datasetRun>
-					<jr:listContents height="25" width="554">
-						<textField>
-							<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="554" height="25" uuid="67369c21-93f8-415a-aa18-557bed37db04">
-								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-							</reportElement>
-							<textElement verticalAlignment="Top" markup="html">
-								<font fontName="SansSerif" size="8"/>
-							</textElement>
-							<textFieldExpression><![CDATA["Name: " + $F{name} + "|| price: " + $F{price} + "|| quantity: " + $F{quantity}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
-			<textField>
-				<reportElement x="20" y="8" width="470" height="30" uuid="77673af3-d040-4c8a-87c0-8fd6b9b847fb"/>
-				<textFieldExpression><![CDATA["DataSourceFieldName: " + $P{dataSourceFieldName}]]></textFieldExpression>
-			</textField>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="54e97bea-f79f-4d27-a9ea-27f4c76f550d"/>
+				<text><![CDATA[Just static text]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>
