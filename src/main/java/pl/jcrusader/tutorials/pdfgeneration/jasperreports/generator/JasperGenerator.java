@@ -93,7 +93,7 @@ public class JasperGenerator {
      */
     private JasperPrint fillReport(JasperReport compiledReport, JsonDataSource jsonDataSource, Map<String, Object> parametersMap) {
         try {
-            return JasperFillManager.fillReport(compiledReport, new LinkedHashMap<>(), jsonDataSource);
+            return JasperFillManager.fillReport(compiledReport, parametersMap, jsonDataSource);
         } catch (JRException e) {
             throw new CannotFillReportWithDataException("Cannot fill report with given data", e);
         }
