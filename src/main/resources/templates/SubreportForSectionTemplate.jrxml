@@ -6,7 +6,6 @@
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
               name="SubreportForSectionTemplate" pageWidth="555" pageHeight="50" columnWidth="555" leftMargin="0"
               rightMargin="0" topMargin="0" bottomMargin="0" uuid="4901564e-1f77-4319-8021-776e6b24185e">
-    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
     <subDataset name="nestedElementsDataSet">
         <queryString>
             <![CDATA[]]>
@@ -27,32 +26,32 @@
         <band splitType="Stretch"/>
     </background>
     <detail>
-        <band height="50">
+        <band height="50" splitType="Stretch">
             <textField>
                 <reportElement x="0" y="0" width="555" height="25"></reportElement>
                 <textFieldExpression><![CDATA["I am sub report. I got parameter: " + $P{dataSourceFieldName}]]></textFieldExpression>
             </textField>
-            <!--<componentElement>-->
-                <!--<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="25" width="555" height="25" isRemoveLineWhenBlank="true">-->
-                    <!--<property name="com.jaspersoft.studio.unit.y" value="pixel"/>-->
-                <!--</reportElement>-->
-                <!--<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">-->
-                    <!--<datasetRun subDataset="nestedElementsDataSet" uuid="2002271b-6392-4900-9f37-b779ff0f6226">-->
-                        <!--<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource($P{dataSourceFieldName})]]></dataSourceExpression>-->
-                    <!--</datasetRun>-->
-                    <!--<jr:listContents height="25" width="555">-->
-                        <!--<textField>-->
-                            <!--<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="25">-->
-                                <!--<property name="com.jaspersoft.studio.unit.height" value="pixel"/>-->
-                            <!--</reportElement>-->
-                            <!--<textElement verticalAlignment="Top" markup="html">-->
-                                <!--<font fontName="SansSerif" size="8"/>-->
-                            <!--</textElement>-->
-                            <!--<textFieldExpression><![CDATA["Name: " + $F{name} + "|| price: " + $F{price} + "|| quantity: " + $F{quantity}]]></textFieldExpression>-->
-                        <!--</textField>-->
-                    <!--</jr:listContents>-->
-                <!--</jr:list>-->
-            <!--</componentElement>-->
+            <componentElement>
+                <reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="0" y="25" width="555" height="25" isRemoveLineWhenBlank="true">
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
+                    <datasetRun subDataset="nestedElementsDataSet" uuid="2002271b-6392-4900-9f37-b779ff0f6226">
+                        <dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource($P{dataSourceFieldName})]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="25" width="555">
+                        <textField>
+                            <reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="25">
+                                <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                            </reportElement>
+                            <textElement verticalAlignment="Top" markup="html">
+                                <font fontName="SansSerif" size="8"/>
+                            </textElement>
+                            <textFieldExpression><![CDATA["Name: " + $F{name} + "|| price: " + $F{price} + "|| quantity: " + $F{quantity}]]></textFieldExpression>
+                        </textField>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
         </band>
     </detail>
 </jasperReport>

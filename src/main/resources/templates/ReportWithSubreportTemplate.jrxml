@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
 <!-- 2017-07-02T18:44:34 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FlatStructuredTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e07b2c30-643c-49e8-b259-ce571da6fd60">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
-	<parameter name="SectionSubReportTemplate" class="net.sf.jasperreports.engine.JasperReport"/>
-	<queryString language="json">
-		<![CDATA[]]>
-	</queryString>
-	<field name="name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="225" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="0" width="479" height="25" uuid="69abd09f-ebb1-4773-afe4-a029ac7980f0"/>
-				<textFieldExpression><![CDATA["SubReport - from parameter"]]></textFieldExpression>
-			</textField>
-			<subreport>
-				<reportElement x="31" y="77" width="200" height="100" uuid="2717d648-3aec-4f89-b3ef-b1eba59277f0"/>
-				<subreportParameter name="dataSourceFieldName">
-					<subreportParameterExpression><![CDATA["bigDebts"]]></subreportParameterExpression>
-				</subreportParameter>
-				<!--<dataSourceExpression><![CDATA[$P{REPORT_CONNECTION}]]></dataSourceExpression>-->
-				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{SectionSubReportTemplate}]]></subreportExpression>
-			</subreport>
-		</band>
-	</detail>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="FlatStructuredTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="e07b2c30-643c-49e8-b259-ce571da6fd60">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
+    <parameter name="SectionSubReportTemplate" class="net.sf.jasperreports.engine.JasperReport"/>
+    <queryString language="json">
+        <![CDATA[]]>
+    </queryString>
+    <field name="name" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="225" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="479" height="25" uuid="69abd09f-ebb1-4773-afe4-a029ac7980f0"/>
+                <textFieldExpression><![CDATA["SubReport - from parameter"]]></textFieldExpression>
+            </textField>
+            <subreport>
+                <reportElement x="31" y="77" width="200" height="100" uuid="2717d648-3aec-4f89-b3ef-b1eba59277f0"/>
+                <subreportParameter name="dataSourceFieldName">
+                    <subreportParameterExpression><![CDATA["bigDebts"]]></subreportParameterExpression>
+                </subreportParameter>
+                <!-- Use "subDataSource" to clone the actual data source -->
+                <dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource()]]></dataSourceExpression>
+                <subreportExpression><![CDATA[$P{SectionSubReportTemplate}]]></subreportExpression>
+            </subreport>
+        </band>
+    </detail>
 </jasperReport>
