@@ -46,16 +46,16 @@ public class JasperGenerator {
      *
      * @param resourceName  name of the resource, that contains ".jrxml" file with template
      * @param data          data that will be used to populate template
-     * @param subreportList list of subreports that are required to compile and fill template provided in resourceName
+     * @param subReportList list of subreports that are required to compile and fill template provided in resourceName
      * @return byte array with PDF file
      * @throws CannotExportJasperPrintToPdf if report cannot be exported to PDF
      */
-    public byte[] generatePdf(String resourceName, Object data, List<Subreport> subreportList) {
+    public byte[] generatePdf(String resourceName, Object data, List<Subreport> subReportList) {
         JasperReport compiledReport = compileReport(resourceName);
         Map<String, Object> compiledSubreportsMap = new HashMap<>();
-        for (Subreport subreport : subreportList) {
-            JasperReport compiledSubreport = compileReport(subreport.getResourceName());
-            compiledSubreportsMap.put(subreport.getParameterName(), compiledSubreport);
+        for (Subreport subreport : subReportList) {
+            JasperReport compiledSubReport = compileReport(subreport.getResourceName());
+            compiledSubreportsMap.put(subreport.getParameterName(), compiledSubReport);
         }
         JasperPrint filledJasperPrint = fillReport(compiledReport, getJsonDataSource(data), compiledSubreportsMap);
         try {
