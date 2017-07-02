@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-07-02T18:42:21 -->
+<!-- 2017-07-02T18:44:34 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FlatStructuredTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e07b2c30-643c-49e8-b259-ce571da6fd60">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportWithSubreportJsonDataAdapter"/>
+	<parameter name="SectionSubReportTemplate" class="net.sf.jasperreports.engine.JasperReport"/>
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>

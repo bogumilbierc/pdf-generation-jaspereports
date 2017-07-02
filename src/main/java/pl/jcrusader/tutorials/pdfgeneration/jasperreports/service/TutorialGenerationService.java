@@ -45,7 +45,7 @@ public class TutorialGenerationService {
         byte[] pdfBytes = jasperGenerator.generatePdf("/templates/ReportWithSubreportTemplate.jrxml", rootObjectForReportWithSubreport, Arrays.asList(
                 JasperGenerator.Subreport.builder()
                         .resourceName("/templates/SubreportForSectionTemplate.jrxml")
-                        .parameterName("ProductsSubreport")
+                        .parameterName("SectionSubReportTemplate")
                         .build()
         ));
         saveToFile(pdfBytes, "ReportWithSubreport.pdf");
